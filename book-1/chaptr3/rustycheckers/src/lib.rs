@@ -49,7 +49,6 @@ impl Into<i32> for GamePiece {
 }
 
 #[no_mangle]
-
 pub extern "C" fn move_piece(fx: i32, fy: i32, tx: i32, ty: i32) -> i32 {
     let mut engine = GAME_ENGINE.write().unwrap();
     let mv = Move::new((fx as usize, fy as usize), (tx as usize, ty as usize));
